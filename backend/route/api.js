@@ -28,7 +28,7 @@ const initApiRoutes = (app) => {
     router.put('/cart/:userId', APIcontroller.updateCart);
     router.delete('/cart/:userId', APIcontroller.deleteCartItem);
     router.delete('/checkout/:userId', APIcontroller.deleteCart);
-    return app.use('/', router);
+    return app.use('/api', router);
 }
 
 module.exports = initApiRoutes;
