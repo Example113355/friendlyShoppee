@@ -20,7 +20,7 @@ const SignUp = () => {
         }
     
         try {
-            const response = await axios.post('http://localhost:3000/api/signup', JSON.stringify({
+            const response = await axios.post('https://friendly-shoppee-7u3u.vercel.app/api/signup', JSON.stringify({
                 "name": name,
                 "email": email,
                 "password": password

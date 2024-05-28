@@ -8,7 +8,7 @@ const OtherPage = () => {
     const [others, setOthers] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/api/items/other')
+        axios.get('https://friendly-shoppee-7u3u.vercel.app/api/items/other')
             .then((response) => {
                 setOthers(response.data);
             })

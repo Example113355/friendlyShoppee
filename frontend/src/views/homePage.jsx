@@ -10,7 +10,7 @@ const HomePage = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/api/items/popular')
+        axios.get('https://friendly-shoppee-7u3u.vercel.app/api/items/popular')
             .then((response) => {
                 setItems(response.data);
             })

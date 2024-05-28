@@ -11,7 +11,7 @@ const CartPage = () => {
 
     useEffect(() => {
         const getCart = async () => {
-            const res = await axios.get(`http://localhost:3000/api/cart/${userId}`);
+            const res = await axios.get(`https://friendly-shoppee-7u3u.vercel.app/api/cart/${userId}`);
             setCartItems(res.data);
         }
         getCart();
@@ -21,7 +21,7 @@ const CartPage = () => {
         const item = cartItems[index];
         const updatedItem = { ...item, '1': item['1'] + 1 };
 
-        await axios.put(`http://localhost:3000/api/cart/${userId}`, updatedItem);
+        await axios.put(`https://friendly-shoppee-7u3u.vercel.app/api/cart/${userId}`, updatedItem);
 
         const newCartItems = cartItems.map((item, i) => i === index ? updatedItem : item);
 
@@ -33,7 +33,7 @@ const CartPage = () => {
         if (item['1'] > 1) {
             const updatedItem = { ...item, '1': item['1'] - 1 };
 
-            await axios.put(`http://localhost:3000/api/cart/${userId}`, updatedItem);
+            await axios.put(`https://friendly-shoppee-7u3u.vercel.app/api/cart/${userId}`, updatedItem);
 
             const newCartItems = cartItems.map((item, i) => i === index ? updatedItem : item);
 
@@ -42,7 +42,7 @@ const CartPage = () => {
     }
 
     const deleteItem = async (id) => {
-        await axios.delete(`http://localhost:3000/api/cart/${userId}`, { data: { "itemId": id } });
+        await axios.delete(`https://friendly-shoppee-7u3u.vercel.app/api/cart/${userId}`, { data: { "itemId": id } });
 
         setCartItems(cartItems.filter(item => item['0'] !== id));
     }
@@ -50,7 +50,7 @@ const CartPage = () => {
     let total = cartItems.reduce((total, item) => total + item['4'] * item['1'], 0);
 
     const handleCheckout = async () => {
-        const res = await axios.delete(`http://localhost:3000/api/checkout/${userId}`);
+        const res = await axios.delete(`https://friendly-shoppee-7u3u.vercel.app/api/checkout/${userId}`);
         if (res.status === 200) {
             alert('Thanh toán thành công');
             setCartItems([]);

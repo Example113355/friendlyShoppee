@@ -8,7 +8,7 @@ const PhonePage = () => {
     const [phones, setPhones] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/api/items/phone')
+        axios.get('https://friendly-shoppee-7u3u.vercel.app/api/items/phone')
             .then((response) => {
                 setPhones(response.data);
             })

@@ -13,7 +13,7 @@ const Home = () => {
     async function handleSubmit(e) {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:3000/api/login', JSON.stringify({
+            const response = await axios.post('https://friendly-shoppee-7u3u.vercel.app/api/login', JSON.stringify({
                 "email": email,
                 "password": password
             }), {headers: {'Content-Type': 'application/json'}});

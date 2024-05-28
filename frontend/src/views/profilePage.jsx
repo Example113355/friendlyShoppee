@@ -15,7 +15,7 @@ const ProfilePage = () => {
 
     const updateItems = async () => {
         try {
-            const response = await axios.get(`http://localhost:3000/api/items`);
+            const response = await axios.get(`https://friendly-shoppee-7u3u.vercel.app/api/items`);
             setItems(response.data);
         }
         catch (error) {
@@ -26,7 +26,7 @@ const ProfilePage = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:3000/api/customers/${userId}`);
+                const response = await axios.get(`https://friendly-shoppee-7u3u.vercel.app/api/customers/${userId}`);
                 const userResponse = response.data;
                 const userObject = {
                     email: userResponse[0][1],
@@ -40,7 +40,7 @@ const ProfilePage = () => {
         }
         const fetchAllUser = async () => {
             try {
-                const response = await axios.get(`http://localhost:3000/api/customers`);
+                const response = await axios.get(`https://friendly-shoppee-7u3u.vercel.app/api/customers`);
                 setUsers(response.data);
             }
             catch (error) {
@@ -49,7 +49,7 @@ const ProfilePage = () => {
         }
         const fetchAllItem = async () => {
             try {
-                const response = await axios.get(`http://localhost:3000/api/items`);
+                const response = await axios.get(`https://friendly-shoppee-7u3u.vercel.app/api/items`);
                 setItems(response.data);
             }
             catch (error) {
@@ -63,7 +63,7 @@ const ProfilePage = () => {
 
     const handleDeleteUser = async (id) => {
         try {
-            await axios.delete(`http://localhost:3000/api/customers/${id}`);
+            await axios.delete(`https://friendly-shoppee-7u3u.vercel.app/api/customers/${id}`);
             setUsers(users.filter(user => user[0] !== id));
         } catch (error) {
             console.error(error);
@@ -72,7 +72,7 @@ const ProfilePage = () => {
 
     const handleDeleteItem = async (id) => {
         try {
-            await axios.delete(`http://localhost:3000/api/items/${id}`);
+            await axios.delete(`https://friendly-shoppee-7u3u.vercel.app/api/items/${id}`);
             setItems(items.filter(item => item[0] !== id));
         }
         catch (error) {

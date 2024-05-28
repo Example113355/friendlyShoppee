@@ -8,7 +8,7 @@ const LaptopPage = () => {
     const [laptops, setLaptops] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/api/items/laptop')
+        axios.get('https://friendly-shoppee-7u3u.vercel.app/api/items/laptop')
             .then((response) => {
                 setLaptops(response.data);
             })
