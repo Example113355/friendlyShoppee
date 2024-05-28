@@ -5,7 +5,7 @@ const Item = ( {img, name, price, id} ) => {
     const addToCart = async () => {
         try {
             const userId = localStorage.getItem('userId');
-            await axios.post('https://friendly-shoppee-7u3u.vercel.app/api/cart/add', JSON.stringify({ 
+            await axios.post('https://friendly-shoppee-4v8j.vercel.app/api/cart/add', JSON.stringify({ 
                 "userId": userId, 
                 "itemId": id,
                 "quantity": 1,
