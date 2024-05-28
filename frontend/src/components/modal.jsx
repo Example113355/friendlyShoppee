@@ -15,7 +15,7 @@ const ModalComponent = ({isOpen, setIsOpen, updateItems}) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('https://friendly-shoppee-7u3u.vercel.app/api/items', JSON.stringify({
+            await axios.post('https://friendly-shoppee-4v8j.vercel.app/api/items', JSON.stringify({
                 "name": name,
                 "img": imgLink,
                 "price": price,
